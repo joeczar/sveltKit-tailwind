@@ -7,13 +7,10 @@ function getTheme() {
 		const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
 		const storedTheme = localStorage.theme;
 		if (!storedTheme) {
-			const modeMatch: any = prefersDarkMode.matches ? 'dark' : 'light';
-
-			// theme.update(modeMatch);
+			const modeMatch = prefersDarkMode.matches ? 'dark' : 'light';
 
 			return modeMatch;
 		}
-		// theme.update(storedTheme);
 		return storedTheme;
 	}
 }

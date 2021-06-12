@@ -4,9 +4,11 @@
 	import { browser } from '$app/env';
 	import type { Theme } from 'src/global';
 
-	export let level: number;
+	export let bgLevel: number;
 	export let darkLevel: number;
 	export let theme: Writable<Theme>;
+	export let classes: string;
+
 	const unsubscribe = theme.subscribe((value) => {
 		browser && localStorage.setItem('theme', value);
 	});
@@ -24,8 +26,8 @@
 </script>
 
 <button
-	class="bg-grey-{level} dark:bg-gray-{darkLevel} hover:bg-gray-{level +
-		100} dark:hover:bg-gray-{darkLevel - 100} w-10 h-10 mx-2 my-auto "
+	class="bg-grey-{bgLevel} dark:bg-gray-{darkLevel} hover:bg-gray-{bgLevel +
+		100} dark:hover:bg-gray-{darkLevel - 100} w-10 h-10 mx-2 my-auto {classes}"
 	on:click={onClick}
 >
 	<svg

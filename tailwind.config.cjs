@@ -2,11 +2,11 @@ module.exports = {
 	purge: ['./src/**/*.html', './src/**/*.js'],
 	darkMode: 'class', // or 'media' or 'class'
 	theme: {
-		theme: {
+		extend: {
 			colors: {
 				transparent: 'transparent',
 				current: 'currentColor',
-				gray: {
+				myGray: {
 					100: '#f3f2f2',
 					200: '#dad8d9',
 					300: '#c1bebf',
@@ -17,7 +17,7 @@ module.exports = {
 					800: '#413e40',
 					900: '#323031'
 				},
-				white: '#F0F3F5',
+				notWhite: '#F0F3F5',
 				blue: {
 					100: '#e7e9fe',
 					200: '#b6befc',
@@ -54,10 +54,10 @@ module.exports = {
 
 				// ...
 			}
-		},
-		variants: {
-			extend: {}
-		},
-		plugins: []
-	}
+		}
+	},
+	variants: {
+		extend: {}
+	},
+	plugins: []
 };

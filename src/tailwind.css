@@ -1,4 +1,64 @@
 /* src/tailwind.css */
+@import url('https://use.typekit.net/yjk0gyh.css');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+	.ms-xlight {
+		font-family: montserrat, sans-serif;
+		font-weight: 200;
+		font-style: normal;
+	}
+	.ms-reg {
+		font-family: montserrat, sans-serif;
+		font-weight: 400;
+		font-style: normal;
+	}
+	.ms-italic {
+		font-family: montserrat, sans-serif;
+		font-weight: 400;
+		font-style: italic;
+	}
+	.ms-bold {
+		font-family: montserrat, sans-serif;
+		font-weight: 700;
+		font-style: normal;
+	}
+	.ms-bold-ital {
+		font-family: montserrat, sans-serif;
+		font-weight: 700;
+		font-style: italic;
+	}
+	.ms-black {
+		font-family: montserrat, sans-serif;
+		font-weight: 900;
+		font-style: normal;
+	}
+	.ms-black-ital {
+		font-family: montserrat, sans-serif;
+		font-weight: 900;
+		font-style: normal;
+	}
+	.ms-alt-black {
+		font-family: montserrat-alternates, sans-serif;
+		font-weight: 900;
+		font-style: normal;
+	}
+	.base {
+		@apply bg-gray-100 dark:bg-gray-800;
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply ms-alt-black;
+	}
+
+	p {
+		@apply ms-reg;
+	}
+}
