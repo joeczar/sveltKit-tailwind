@@ -1,15 +1,26 @@
 <script lang="ts">
-	import { createEventDispatcher } from 'svelte';
+	import { createEventDispatcher, onDestroy } from 'svelte';
+	import type { Writable } from 'svelte/store';
+	import { browser } from '$app/env';
+	import type { Theme } from 'src/global';
 
 	export let level: number;
 	export let darkLevel: number;
+	export let theme: Writable<Theme>;
+	const unsubscribe = theme.subscribe((value) => {
+		browser && localStorage.setItem('theme', value);
+	});
 
 	const dispatch = createEventDispatcher();
-	let hidden = false;
+	let hidden = $theme === 'light';
 	const onClick = () => {
 		hidden = !hidden;
-		dispatch('theme', { light: hidden });
+		const newTheme = hidden ? 'light' : 'dark';
+		theme.set(newTheme);
+		dispatch('theme', { light: newTheme });
 	};
+
+	onDestroy(unsubscribe);
 </script>
 
 <button
