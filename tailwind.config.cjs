@@ -18,7 +18,7 @@ module.exports = {
 					900: '#323031'
 				},
 				notWhite: '#F0F3F5',
-				blue: {
+				myBlue: {
 					100: '#e7e9fe',
 					200: '#b6befc',
 					300: '#8593f9',
@@ -29,7 +29,7 @@ module.exports = {
 					800: '#071792',
 					900: '#050f61'
 				},
-				green: {
+				myGreen: {
 					100: '#e6ffef',
 					200: '#b3ffcf',
 					300: '#80ffae',
@@ -40,7 +40,7 @@ module.exports = {
 					800: '#009938',
 					900: '#006625'
 				},
-				red: {
+				myRed: {
 					100: '#fdd9ce',
 					200: '#fbb39d',
 					300: '#f98d6c',

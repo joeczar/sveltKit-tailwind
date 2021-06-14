@@ -2,10 +2,10 @@
 	import { createEventDispatcher, onDestroy } from 'svelte';
 	import type { Writable } from 'svelte/store';
 	import { browser } from '$app/env';
-	import type { Theme } from 'src/global';
+	import type { BaseBgInterface, Theme } from 'src/global';
+	import Button from '$lib/objects/button';
 
-	export let bgLevel: number;
-	export let darkLevel: number;
+	export let bg: BaseBgInterface;
 	export let theme: Writable<Theme>;
 	export let classes: string;
 
@@ -25,11 +25,7 @@
 	onDestroy(unsubscribe);
 </script>
 
-<button
-	class="bg-grey-{bgLevel} dark:bg-gray-{darkLevel} hover:bg-gray-{bgLevel +
-		100} dark:hover:bg-gray-{darkLevel - 100} w-10 h-10 mx-2 my-auto {classes}"
-	on:click={onClick}
->
+<Button {bg} {onClick}>
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		viewBox="0 0 20 20"
@@ -48,4 +44,4 @@
 		class={`moon ${!hidden ? 'hidden' : ''} w-5 h-5 m-auto transform -rotate-90`}
 		><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" /></svg
 	>
-</button>
+</Button>

@@ -1,14 +1,14 @@
 <script lang="ts">
-	import { baseBgClass } from '$lib/cssFunctions';
-	import type { FlexDirectionType, HeaderDisplayType } from 'src/global';
+	import { baseBgClasses, levelBg } from '$lib/cssFunctions';
+	import type { BaseBgInterface } from 'src/global';
 
-	export let bgColor: string;
-	export let bgLevel: number;
-	export let darkLevel: number;
-	export let classes: string;
+	export let bg: BaseBgInterface;
+	export let classes = '';
+	export let level = 0;
+	const headerBg = levelBg(bg, level);
 </script>
 
-<header class="p-1 w-full {baseBgClass(bgColor, bgLevel, darkLevel)} {classes}">
+<header class="p-1 w-full {baseBgClasses(headerBg)} {classes}">
 	<slot />
 </header>
 

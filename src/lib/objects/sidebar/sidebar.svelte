@@ -1,16 +1,14 @@
 <script lang="ts">
-	import { baseBgClass } from '$lib/cssFunctions';
-	export let bgColor: string;
-	export let bgLevel: number;
-	export let darkLevel: number;
+	import { baseBgClasses } from '$lib/cssFunctions';
+	import type { BaseBgInterface } from 'src/global';
+
+	export let bg: BaseBgInterface;
 	export let open = false;
 </script>
 
 <aside
-	class="nav-menu fixed h-full {baseBgClass(
-		bgColor,
-		bgLevel,
-		darkLevel
+	class="nav-menu fixed h-full {baseBgClasses(
+		bg
 	)} w-11/12 mr-0 ml-auto transform transition duration-500 ease-in-out 
 "
 	class:open
